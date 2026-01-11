@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.card {
+    @apply border-2 rounded-2xl pr-2 pl-2 font-bold cursor-pointer;
+}
