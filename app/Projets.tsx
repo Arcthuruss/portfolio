@@ -28,6 +28,19 @@ export default function Projets() {
 
     return (<>
         <main className="flex flex-col gap-[32px] items-center w-full">
+            <div>
+                <p>Dans le contexte de mon BUT Informatique, j'ai eu l'occasion de réaliser plusieurs projets. Ils sont
+                    triés selon plusieurs catégories, les compétences du BUT (UE), projets de stage et projets personnels</p>
+                <p>Les compétences sont les suivantes:</p>
+                <ul className="list-disc list-inside">
+                    <li>UE1: Réaliser un développement d'application</li>
+                    <li>UE2: Optimiser des applications informatiques</li>
+                    <li>UE3: Administrer des systèmes informatiques communicants complexes</li>
+                    <li>UE4: Gérer des données de l'information</li>
+                    <li>UE5: Conduite de projet</li>
+                    <li>UE6: Travailler dans une équipe informatique</li>
+                </ul>
+            </div>
             <div className="flex flex-row justify-around w-full">
                 {/*<button onClick={() => console.table(filters)}>debug</button>*/}
                 <div className={"card border-[#BEEEEF]" + (filters.includes("UE1")?" bg-[#BEEEEF] text-black":"")} onClick={() => changeFilter("UE1")}>
@@ -55,7 +68,7 @@ export default function Projets() {
                     <p>Stage</p>
                 </div>
             </div>
-            <div className="grid grid-cols-5 gap-5">
+            <div className="grid grid-cols-3 gap-5">
                 <ProjectCard
                     image={"/placeholder.webp"}
                     name={"Système de reccomendation de musique"}
@@ -78,7 +91,14 @@ export default function Projets() {
                     tags={["Perso"]}
                     filters={filters}
                 />
-                {carsgroup}
+                <ProjectCard
+                    image={"/placeholder.webp"}
+                    name={"Création d'un site de promotion d'offres"}
+                    desc={"Création d'un site web où des professionels peuvent mettre des annonces pour promouvoir des" +
+                        "restaurants, attractions, musées, etc..."}
+                    tags={["UE1", "UE2", "UE3", "UE4", "UE5", "UE6"]}
+                    filters={filters}
+                />
             </div>
         </main>
         </>)
