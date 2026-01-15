@@ -4,6 +4,7 @@ import "./page.css";
 import {useState} from "react";
 import Projets from "./Projets";
 import Profile from "./Profile";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -31,8 +32,14 @@ export default function Home() {
             </p>
         </div>
         {page}
-        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-
+        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center dark:bg-gray-800 bg-lime-800 w-full bottom-0 fixed pt-5 pb-5">
+            <a className="flex flex-row items-center gap-2" href="https://github.com/Arcthuruss">
+                <Image className="bg-white rounded-full" src={"./Octicons-mark-github.svg"} alt={"Github Logo"} width={48} height={48} />
+                <p>@Arcthuruss</p>
+            </a>
+            <a href="mailto:luc.donnard@etudiant.univ-rennes.fr?cc=luc.donnard2@gmail.com">
+                <Image src={"./mail.svg"} alt={"mail icon"} width={48} height={48} />
+            </a>
         </footer>
     </div>
     );

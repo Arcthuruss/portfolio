@@ -14,11 +14,18 @@ enum Tags {
 
 export type TagString = keyof typeof Tags;
 
-export default function ProjectCard({image, name, desc, tags, filters}: {image: string; name: string; desc: string, tags: TagString[], filters: TagString[]}) {
+export default function ProjectCard({image, name, desc, tags, filters, link}: {image: string; name: string; desc: string, tags: TagString[], filters: TagString[], link: string | undefined}) {
 
     return (<>
-        <div className={"flex flex-row border-2 border-gray-200 rounded-2xl gap-2" + (!filters.some(f => tags.includes(f))?" hidden":"")}>
-            <Image src={image} alt={name} width={75} height={75} className={"rounded-l-2xl"}/>
+        <div
+            className={
+                "flex flex-row border-2 border-gray-200 rounded-2xl gap-2"
+                + (!filters.some(f => tags.includes(f))?" hidden":"")
+                + (link===undefined?"":" cursor-pointer hover:border-red-950 hover:dark:border-red-400 transition duration-300")
+            }
+            onClick={link===undefined?() => {}:() => window.open(link, '_blank')}
+        >
+            <Image src={image} alt={name} width={124} height={124} className={"rounded-l-2xl object-cover"}/>
             <div className="flex flex-col justify-around p-2">
                 <p className="font-bold text-2xl">{name}</p>
                 <p>{desc}</p>

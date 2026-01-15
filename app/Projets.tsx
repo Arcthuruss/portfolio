@@ -14,25 +14,13 @@ export default function Projets() {
         }
     }
 
-    let carsgroup: React.JSX.Element[] = [];
-    for (let i = 0; i < 10; i++) {
-        carsgroup.push(<ProjectCard
-            image={"/placeholder.webp"}
-            name={"Placeholder"}
-            desc={"Lorem ipsum dolor sit amet"}
-            tags={["UE1", "UE2", "UE3", "UE4", "UE5", "UE6", "Perso"]}
-            filters={filters}
-            key={i}
-        />)
-    }
-
     return (<>
         <main className="flex flex-col gap-[32px] items-center w-full">
-            <div>
+            <div className="bg-white text-black p-5 rounded-2xl">
                 <p>Dans le contexte de mon BUT Informatique, j'ai eu l'occasion de réaliser plusieurs projets. Ils sont
-                    triés selon plusieurs catégories, les compétences du BUT (UE), projets de stage et projets personnels</p>
-                <p>Les compétences sont les suivantes:</p>
-                <ul className="list-disc list-inside">
+                    triés selon plusieurs catégories, les compétences du BUT (UE), projets de stage et projets personnels.</p>
+                <p className="ml-4">Les compétences sont les suivantes:</p>
+                <ul className="list-disc list-inside ml-8">
                     <li>UE1: Réaliser un développement d'application</li>
                     <li>UE2: Optimiser des applications informatiques</li>
                     <li>UE3: Administrer des systèmes informatiques communicants complexes</li>
@@ -68,36 +56,40 @@ export default function Projets() {
                     <p>Stage</p>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 gap-5">
                 <ProjectCard
-                    image={"/placeholder.webp"}
+                    image={"/sys_logo.png"}
                     name={"Système de reccomendation de musique"}
                     desc={"Création d'un site avec un système de reccomendation de musique en créant une IA"}
                     tags={["UE4", "UE5", "UE6"]}
                     filters={filters}
+                    link={"https://github.com/orgs/IUT-InTheEnd/repositories"}
                 />
                 <ProjectCard
-                    image={"/placeholder.webp"}
+                    image={"/128px-Logo_IUT_Lannion.svg.png"}
                     name={"Analyse d'avis utilisateur"}
                     desc={"Analyse des effets de traitement contre le diabète à partir d'avis laissé par des " +
                         "utilisateurs suivit de reccomendation de traitement"}
                     tags={["Stage"]}
                     filters={filters}
+                    link={undefined}
                 />
                 <ProjectCard
-                    image={"/placeholder.webp"}
+                    image={"/Penrose-dreieck.svg"}
                     name={"Portfolio"}
                     desc={"Création d'un site web portfolio pour présenter mes projets"}
                     tags={["Perso"]}
                     filters={filters}
+                    link={"https://github.com/Arcthuruss/portfolio"}
                 />
                 <ProjectCard
-                    image={"/placeholder.webp"}
+                    image={"/pact_logo.svg"}
                     name={"Création d'un site de promotion d'offres"}
                     desc={"Création d'un site web où des professionels peuvent mettre des annonces pour promouvoir des" +
                         "restaurants, attractions, musées, etc..."}
                     tags={["UE1", "UE2", "UE3", "UE4", "UE5", "UE6"]}
                     filters={filters}
+                    link={"https://github.com/A2-2-CeltiCode/PACT"}
                 />
             </div>
         </main>
